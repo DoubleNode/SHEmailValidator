@@ -47,8 +47,6 @@
 #pragma mark - UITextFieldDelegate methods
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    [self.target dismissSuggestionView];
-    
     if ([self.subDelegate respondsToSelector:@selector(textFieldShouldBeginEditing:)]) {
         return [self.subDelegate textFieldShouldBeginEditing:textField];
     } else {
@@ -58,6 +56,8 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    [self.target dismissSuggestionView];
+
     if ([self.subDelegate respondsToSelector:@selector(textFieldDidBeginEditing:)]) {
         [self.subDelegate textFieldDidBeginEditing:textField];
     }
