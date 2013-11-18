@@ -20,7 +20,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHEmailValidationTextField : UITextField
+#import "DNTextField.h"
+
+@interface SHEmailValidationTextField : DNTextField
 
 @property (nonatomic, strong) NSString *defaultErrorMessage;
 @property (nonatomic, strong) NSString *messageForSuggestion;
